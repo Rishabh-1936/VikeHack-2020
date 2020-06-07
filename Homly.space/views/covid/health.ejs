@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/996973c893.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- <script src="../../public/js/health.js"></script> -->
+    <title>Homly.space</title>
+
+    <link href="../../public/css/health.css" rel="stylesheet">
+
+    <!-- <script src='build/pdfmake.min.js'></script>
+        <script src='build/vfs_fonts.js'></script> -->
+    <script defer src="../../public/js/health.js"></script>
+    <script defer src="../../public/js/newHealth.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="container-fluid m-0 p-0" style="color: black;font-weight: bold;">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" href="#"><b>Homly.space</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/request">Request Meal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/status">Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/barter">Barter</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/covid">Cornavirus</a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <% if (currentUser) {%>
+                    <a class="nav-link" style="color:black" href="/logout">Logout</a>
+
+                    <%} else {%>
+                    <a class="nav-link" style="color:black" href="/login">Login / SignUp</a>
+                    <%}%>
+                </div>
+            </div>
+        </nav>
+        <div class="covid-hearder my-3" style="justify-content: center;display: flex;border-top: 1px solid #d0cdcd;">
+        <nav class="nav">
+            <a class="nav-link active" href="/covid">Statistics</a>
+            <a class="nav-link" href="/covid/world">World</a>
+            <!-- <a class="nav-link" href="#">News</a> -->
+            <a class="nav-link" href="/covid/health">Diagnose</a>
+        </nav>
+        </div>
+
+    <div class="container">
+        <div id="health"></div>
+        <div id="alert">*Please select atleast one option</div>
+        <button class="btn btn-outline-success" id="next">Next <span id="next-span">-></span></button>
+    </div>
+    <div class="container my-5">
+        <a href="/covid/report" class="btn btn-outline-success my-5" id="submit"> Get Virtual Report </a>
+    </div>
+    <div id="result"></div>
+    <!-- <script src="../../public/js/newHealth.js"></script> -->
+    <!-- <script src="../../public/js/health.js"></script> -->
+</body>
+
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/996973c893.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- <script src="../../public/js/health.js"></script> 
+    <title>Homly.space</title>
+
+    <link href="../../public/css/health.css" rel="stylesheet">
+
+    <!-- <script src='build/pdfmake.min.js'></script>
+    <script src='build/vfs_fonts.js'></script> 
+    <script defer src="../../public/js/health.js"></script>
+    <script defer src="../../public/js/newHealth.js"></script>
+
+</head>
+
+<body> -->

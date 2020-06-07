@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <a class="navbar-brand" href="#"><b>Homly.space</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <% if(role=="volunteer"){ %>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/request">Request Meal</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="/status">Status</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/barter">Barter</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="/covid">Cornavirus</a>
+            </li>
+        </ul>
+        <% } else { %>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Request
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/request/shelter">Shelter</a>
+                    <a class="dropdown-item" href="/request/food">Food</a>
+                    <!-- <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div> -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/status">Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/barter">Barter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/covid">Cornavirus</a>
+            </li>
+        </ul>
+        <% } %>
+        <div class="form-inline my-2 my-lg-0" id="anchor-link">
+            <% if (currentUser) {%>
+            <a class="nav-link active" style="color:black" href="/logout">Logout</a>
+
+            <%} else {%>
+            <a class="nav-link active" style="color:black" href="/login">Login / SignUp</a>
+            <%}%>
+                </div>
+            </div>
+        </nav>

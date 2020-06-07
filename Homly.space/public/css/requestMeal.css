@@ -1,0 +1,28 @@
+body {
+            background-color: #e2e2e25e;
+        }
+
+        .con p {
+            text-align: justify;
+            margin: 8% 0%;
+        }
+
+        .row {
+            margin-bottom: 150px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        nav {
+            font-size: 1.5rem;
+            /* box-shadow: 0px 2px 2px 1px #6b6b6b; */
+        }
+        .bg-primary{
+                background-color: #268efbf0 !important;
+        }
+        
+        #anchor-link a {
+            color: white !important;
+        }

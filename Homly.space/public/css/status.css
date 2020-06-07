@@ -1,0 +1,41 @@
+body {
+            background-color: #e2e2e25e;
+        }
+
+        nav {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        #anchor-link a {
+            color: white !important;
+        }
+
+
+        .bg-primary {
+            background-color: #268efbf0 !important;
+            /* background-color: #2785e8f0 !important;
+            background: #4e54c8;
+            background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+            background: linear-gradient(to right, #8f94fb, #4e54c8); */
+
+
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .detail h5,
+        p {
+            display: inline-block;
+        }
+
+        .request-block {
+            box-shadow: 1px 0px 7px black;
+            border: 1px black solid;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+
+        }

@@ -1,0 +1,70 @@
+body{
+    background-color: #f2f2f2;
+}
+.nav-link{
+    color:white!important;
+    font-size: 1.4rem;
+}
+.navbar-brand{
+    color:white!important;
+    font-size: 1.5rem;
+}
+
+.header{
+    background-image: url('../images/home-background.jpg');
+    height: 480px;
+}
+.header .container{
+    margin-top: 8%;
+    color: white;
+    text-align: center;
+}
+.header .container .row{
+    display: flex;
+    justify-content: center;
+}
+.header .container h1{
+    font-size:3.5rem ;
+}
+.header .container .row .input-group{
+    width: 70%;
+}
+#basic-addon1{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#search{
+    font-size: 20px;
+}
+.house-item{
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+                0 2px 2px rgba(0,0,0,0.12), 
+                0 4px 4px rgba(0,0,0,0.16), 
+                0 8px 8px rgba(0,0,0,0.20);
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 1%;
+}
+.house-img{
+    display: flex;
+    padding: 1%;
+}
+.house-detail p{
+    margin:0;
+}
+.house-detail{
+    padding: 3%;
+}
+.house-intro{
+    color: #949292;
+    font-style: italic;
+}
+.house-owner{
+    font-weight: 600;
+}
+
+.house-row{
+    display: flex;
+    justify-content: space-around;
+}

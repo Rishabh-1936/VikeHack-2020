@@ -1,0 +1,121 @@
+<div class="container my-4 signup-form">
+    <form method="POST" action="/signUp/volunteer" target="_self">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" value="" placeholder="First Name"
+                    required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" name="lname" value="" placeholder="Last Name"
+                    required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" value=""
+                    placeholder="Password" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="" name="address"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"
+                required>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" value="" name="city" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" placeholder="State" value="" name="state" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="Zip Code" value="" name="zip" required>
+            </div>
+        </div>
+        <div class="form-row" style="align-items: center;">
+            <div class="form-group col-md-3">
+                <button type="button" class="btn btn-success" id="location">Home Location</button>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude" placeholder="Latitude" value="" name="latitude"
+                    readonly required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude" placeholder="Longitude" value="" name="longitude"
+                    readonly required>
+            </div>
+        </div>
+        <div class="form-group">
+            <h3>Health*</h3>
+
+            <p>Reminder: you must be healthy to be a volunteer. If you have any questions, please do not take the
+                pledge and email us<br>
+                instead so we can talk it through. Please check the following boxes to complete the Volunteer
+                Pledge. :</p>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="check1" id="check1" name="checking">
+            <label class="form-check-label" for="check1">
+                I am not exhibiting any symptoms of COVID-19 (cough, fever, etc.)
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="check2" id="check2" name="checking">
+            <label class="form-check-label" for="check2">
+                I have not traveled out-of-country in the past 14 days
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="check3" id="check3" name="checking">
+            <label class="form-check-label" for="check3">
+                I have not come in contact with a sick person in the past 14 days
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="check4" id="check4" name="checking">
+            <label class="form-check-label" for="check4">
+                I have been practicing social distancing
+            </label>
+        </div>
+        <div class="form-group my-4">
+            <label for="delivery_days">How many days a week do you anticipate being available for at
+                least one delivery?</label>
+            <select class="form-control" id="delivery_days" name="delivery_days">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+
+        <div style="display: flex;">
+            <button type="submit" class="btn btn-primary" style="margin: auto;">Register</button>
+        </div>
+        <div style="display: flex;justify-content: center;" class="my-4">
+            <a href="./login">
+                Already have an account
+            </a>
+            <!-- <a><h3>Forgot Password</h3></a> -->
+        </div>
+
+    </form>
+</div>

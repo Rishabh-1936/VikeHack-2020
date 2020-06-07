@@ -1,0 +1,75 @@
+<div class="container my-4 signup-form">
+    <form method="POST" action="/request">
+
+        <div class="form-group">
+            <label for="delivery_list">Please mention only essential items in list</label>
+            <small></small>
+            <textarea class="form-control" id="delivery_list" name="delivery_list" value="" rows="10" placeholder="
+    Mention the essential things like:
+    Grocery:
+    1.Vegetables
+    2.Fruits
+    Dairy:
+    1.Milk
+    Medicine:
+    1.Asprin
+                " required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pay_method">How would you like to pay?</label>
+            <select class="form-control" id="pay_method" name="pay_method" required>
+                <option value="pay_1">Call ahead to store and pay</option>
+                <option value="pay_2">Have the volunteer pay and reimburse when they deliver</option>
+                <option value="pay_3">N/A- I am requesting free delivery</option>
+            </select>
+        </div>
+        <div class="form-group my-4">
+            <label for="delivery_delay">How much time delay you may expect in the delivery(perferable 1-2
+                days)?</label>
+            <select class="form-control" id="delivery_delay" name="delivery_delay" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="additional_request">Do you have special requirements we should know about?</label><br>
+
+            <small style="color: #838181e6;">Let us know if you have any special accessibility needs, language
+                requirements, or notes for your
+                volunteer. Or, if you
+                are filling this out on behalf of someone else, let us know if you'd like us to contact you directly to
+                confirm the
+                order.</small>
+            <textarea class="form-control" id="additional_request" name="additional_request" value="" rows="5"
+                placeholder="Additional message"></textarea>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="request-contact-permission" required>
+            <label class="form-check-label" for="request-contact-permission">I authorize to share my contact information
+                with volunteers.*</label>
+        </div>
+
+        <div style="display: flex;justify-content: center;">
+            <% if(isAuthenticated) { %>
+            <button type="submit" class="btn btn-primary" style="margin: auto;">Submit</button>
+            <% } else { %>
+            <div>
+                <button type="button" class="btn btn-primary" style="display: block;"
+                    onclick="disable_func()">Submit</button>
+                <small class="pt-2" id="alert-text" style="color:#ff0000eb;display: none;">*Please <a
+                        href="/login">login</a></small>
+            </div>
+            <% } %>
+        </div>
+
+    </form>
+</div>
+<script>
+    function disable_func() {
+        document.getElementById('alert-text').style.display = "block";
+    }
+</script>

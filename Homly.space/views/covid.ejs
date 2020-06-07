@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- <link href="../../public/css/home.css" rel="stylesheet" type="text/css"> -->
+    <style>
+        .form-row {
+            margin: 2% -5px 2% -5px;
+        }
+
+        .signup-text {
+            padding: 0% 15%;
+            line-height: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .signup-form {
+            border: 0.5px #c9c7c7 solid;
+            box-shadow: 0px 2px 6px #00000096;
+            padding: 2%;
+            border-radius: 10px;
+        }
+
+        .sqs-block-content {
+            text-align: center;
+            margin: auto;
+            margin-top: 60px;
+        }
+
+        body {
+            background-color: #e2e2e25e;
+            overflow-x: hidden;
+        }
+
+        #myTab {
+            text-align: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #00000078;
+            font-weight: bold;
+        }
+
+        .list-group {
+            font-size: 1.3rem;
+        }
+
+        nav {
+            font-size: 1.2rem;
+        }
+
+        .col-2 {
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .col-2 .card {
+            text-align: center;
+            width: 90%;
+            margin: 10% auto;
+            box-shadow: 0px 1px 4px #00000099;
+        }
+
+        b {
+            font-weight: bold;
+        }
+
+        .info-content {
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 100px;
+        }
+
+        .rotate {
+            width: 100px;
+            animation: rotation 5s infinite linear;
+            height: 100px;
+        }
+
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><b>Homly.space</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/request">Request Meal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/status">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/barter">Barter<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/covid">Cornavirus</a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0 active">
+                <% if (currentUser) {%>
+                <a class=" nav-link" style="color:black" href="/logout">Logout</a>
+
+                <%} else {%>
+                <a class="nav-link" style="color:black" href="/login">Login / SignUp</a>
+                <%}%>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-9">
+                <img src="https://foreignpolicy.com/wp-content/uploads/2020/03/coronavirus-map-032920-mobile.png"
+                    style="width:100%">
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-header">
+                        Coronavirus Cases:
+                    </div>
+                    <div class="card-body">
+                        765,042
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Deaths:
+                    </div>
+                    <div class="card-body">
+                        36,868
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Recovered:
+                    </div>
+                    <div class="card-body">
+                        160,150
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info-content">
+
+            <div class="about">
+                <div style="display: flex;justify-content: space-between;">
+                    <h2 class="mb-2" style="display: inline;">About Coronavirus</h2>
+
+                    <div style="position: relative;/* top: 51px; */right: 0;display: inline;">
+                        <img class="rotate" src="../public/images/new-covid-virus.png">
+                    </div>
+                </div>
+                <p>
+                    Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered
+                    coronavirus.<br>
+
+                    Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness
+                    and
+                    recover
+                    without
+                    requiring special treatment. Older people, and those with underlying medical problems like
+                    cardiovascular
+                    disease,
+                    diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.<br>
+
+                    The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the
+                    disease
+                    it
+                    causes
+                    and how it spreads. Protect yourself and others from infection by washing your hands or using an
+                    alcohol
+                    based rub
+                    frequently and not touching your face.<br>
+
+                    The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an
+                    infected
+                    person
+                    coughs or sneezes, so it’s important that you also practice respiratory etiquette (for example, by
+                    coughing
+                    into a
+                    flexed elbow).<br>
+
+                    At this time, there are no specific vaccines or treatments for COVID-19. However, there are many
+                    ongoing
+                    clinical
+                    trials
+                    evaluating potential treatments. WHO will continue to provide updated information as soon as
+                    clinical
+                    findings
+                    become
+                    available.
+                </p>
+            </div>
+            <div class="symptoms">
+                <p>
+                    <b>Common symptoms include:</b><br>
+                </p>
+                <ul>
+                    <li>
+                        Fever
+                    </li>
+                    <li>Tiredness
+                    </li>
+                    <li>Dry cough</li>
+                </ul>
+
+                <b>Other symptoms include:</b><br>
+                <ul>
+
+                    <li>
+
+                        Shortness of breath
+                    </li>
+                    <li>Aches and pains</li>
+                    <li>Sore throat</li>
+                    <li>very few people will report diarrhoea, nausea or a runny nose</li>
+                </ul>
+                <p></p>
+            </div>
+            <div>
+                <img src="https://pbs.twimg.com/media/ESt5Ye6UwAI1pBS.jpg">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col contact-info">
+                <p>
+                    <h3>For more information regarding COVID-19 please visit the following link:</h3><br>
+                    <a href="https://www.mohfw.gov.in/pdf/FAQ.pdf">COVID-19 Test Information</a> <br><br>
+                    For Toll Free Helpline Number pdf Version:
+                    <a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf">Click here</a><br><br>
+
+                    <i class="fa fa-whatsapp" style="margin: auto 5px;color: #2fc535;"></i><b>Whatsapp Number:</b>
+                    +91-9013151515<br>
+                    <i class="fa fa-phone" style="margin: auto 5px;color: #2196f2;"></i><b>Central Helpline Number:</b>
+                    +91-11-23978046<br>
+                </p>
+            </div>
+            <!-- <div class="col-lg-6 contact-map">
+        
+                  </div> -->
+        </div>
+    </div>
+    <%-include('partials/footer')%>

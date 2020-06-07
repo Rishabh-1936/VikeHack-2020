@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
+        type="test/css">
+    <link href="/public/css/wave.css" rel="stylesheet" type="text/css">
+    <link href="../../public/css/mybarter.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <%- include ('partials/nav') %>
+
+    <div class="header">
+        <div class="inner-header flex">
+            <div class="row" style="width: 100%;">
+                <div class="col-3" style="max-width: 22%;">
+                    <div>
+                        <select class="custom-select my-1 mr-sm-2" id="search" name="search"
+                            onchange="categoryFilter()">
+                            <option value="all" selected>Search by category</option>
+                            <option value="food">Food</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="medical">Medical</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="sports">Sports</option>
+                            <option value="kids">Kids</option>
+                            <option value="electronics">Electronics</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <h1>My Barter List</h1>
+                </div>
+            </div>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+    </div>
+
+    <div class="container my-5">
+        <% if (mode=="display"){ %>
+        <div class="row">
+            <% items.forEach(function(image) { %>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+                        class="card-img-top img-thumbnail" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b><%= image.pname %></b></h5>
+                        <p class="card-text category"><%= image.pcategory %></p>
+                        <p class="card-text"><%= image.pdesc %></p>
+                        <a href="/barter/my/items/modify/<%= image._id%>" class="btn btn-primary">Edit</a>
+                        <a href="/barter/my/items/delete/<%= image._id%>" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <% } else { %>
+        <div class="container" id="edit-form">
+            <form action="/barter/my/items/modify/<%= item._id %>" method="POST">
+                <div class="form-group">
+                    <label for="pname">Product Name</label>
+                    <input type="text" class="form-control" id="pname" placeholder="Name" value="<%= item.pname %>"
+                        name="pname" required>
+                </div>
+                <div class="form-group">
+                    <label for="pdesc">Product Description</label>
+                    <textarea class="form-control" id="pdesc" name="pdesc" rows="5" placeholder="Description"
+                        value="hello" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pcategory">Category</label>
+                    <select class="form-control" id="pcategory" name="pcategory" required>
+                        <option value="food">Food</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="medical">Medical</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="sports">Sports</option>
+                        <option value="kids">Kids</option>
+                        <option value="electronics">Electronics</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group">
+                <label for="pimage">Product Image</label>
+                <input type="file" class="form-control-file" id="pimage" name="pimage" value="">
+            </div> -->
+                <div style="display: flex;">
+                    <button type="submit" class="btn btn-primary" style="margin: auto;">Submit</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            var str = '<%- JSON.stringify(item) %>';
+            var obj = JSON.parse(str);
+            console.log(obj.pdesc)
+            document.getElementById('pdesc').value = obj.pdesc;
+            document.getElementById('pcategory').value = obj.pcategory;
+        </script>
+        <% } %>
+
+    </div>
+
+    <script>
+        function categoryFilter() {
+            let search = document.getElementById('search').value;
+            let categories = document.getElementsByClassName('category');
+            let len = categories.length;
+            for (let i = 0; i < len; ++i) {
+                if (categories[i].innerText.toLowerCase() == search || search == "all") {
+                    categories[i].parentNode.parentElement.parentElement.style.display = "block"
+                }
+                else {
+                    categories[i].parentNode.parentElement.parentElement.style.display = "none"
+                }
+            }
+        }
+
+    </script>
+    <script>
+        window.onload = function highlightClass() {
+            let navItems = document.getElementsByClassName('nav-item');
+            let nav = document.getElementsByTagName('nav');
+
+            for (let i = 0; i < navItems.length; ++i) {
+                if (navItems[i].innerText == "Barter") navItems[i].classList.add("active")
+            }
+            nav[0].classList.remove("navbar-light", "bg-transparent")
+            nav[0].classList.add("navbar-dark", "bg-primary")
+        }
+    </script>
+</body>
+
+</html>

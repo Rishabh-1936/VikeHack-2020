@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <link href="../../public/css/login-register.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div id="main">
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+        <%- include ('partials/nav') %>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><b>NeighbourHood</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/request">Request Meal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/status">Status</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/barter">Barter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/covid">Cornavirus</a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0 active">
+                    <% if (currentUser) {%>
+                    <a class=" nav-link" style="color:black" href="/logout">Logout</a>
+
+                    <%} else {%>
+                    <a class="nav-link" style="color:black" href="/login">Login / SignUp<span
+                            class="sr-only">(current)</span></a>
+                    <%}%>
+                </div>
+            </div>
+        </nav>
+         -->
+        <% if(!isAuthenticated && (msg).length > 0) { %>
+        <% if( (msg).search("Error") == 0) { %>
+        <div id="alert-err">
+            <% } else { %>
+            <div id="alert-notify">
+                <% } %>
+                <h6><%= msg %></h6>
+            </div>
+            <% } %>
+
+
+            <div class="hearder">
+                <div class="sqs-block-content">
+                    <h1>Get Started By Sigining Up with</h1>
+                    <h1>NeighborHood</h1>
+                    <p class="signup-text my-5">
+                        <strong> You are amazing! By signing up you will become a team member of volunteers,
+                            government
+                            servants, educators, and nonprofits, to help others to get
+                            through this
+                            pandemic is as a community.</strong><br><br>
+                        Built by a team of volunteers, NeighborHood is a platform for government entities
+                        that
+                        connects
+                        at-risk residents
+                        with essential services including meals, groceries, and ad-hoc deliveries during
+                        COVID-19.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="signUp-tab" data-toggle="tab" href="#signUp" role="tab"
+                        aria-controls="signUp" aria-selected="true">SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login"
+                        aria-selected="false">Login</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="signUp" role="tabpanel" aria-labelledby="signUp-tab">
+                    <%- include('forms/register-form')%>
+                </div>
+                <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <%- include('forms/login-form')%>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="signup-text my-5" style="color: #838181e6;">
+            <p style="margin-top:9%;text-align: center;">We take your privacy very seriously. We only
+                collect
+                this data to
+                help
+                us meet the
+                goals of Neighbor Express
+                and match
+                you with someone who has requested aid in your local community. Please contact us at
+                rishabhjain.1936@gmail.com with any
+                questions or requests to be removed from the list.</p>
+        </div>
+
+        <script type="text/javascript">
+
+
+            document.getElementById('location').addEventListener("click", (event) => {
+                console.log('clicked' + navigator.geolocation)
+                if (navigator.geolocation) {
+                    console.log('inside')
+                    var lng = document.getElementById('longitude');
+                    var lat = document.getElementById('latitude');
+
+                    navigator.geolocation.getCurrentPosition(pos => {
+                        console.log('pos', pos)
+
+                        lng.value = pos.coords.longitude;
+                        lat.value = pos.coords.latitude;
+                    })
+                } else {
+                    alert("Geolocation is not supported.Please allow location access.");
+                }
+            })
+        </script>
+
+        <%- include ('partials/footer') %>

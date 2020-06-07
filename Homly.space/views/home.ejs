@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../public/css/modal/iziModal.min.css">
+
+    <link href="../public/css/carousel.css" rel="stylesheet" type="text/css">
+    <link href="../public/css/home.css" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+
+<body>
+    <div id="main">
+        <%- include('partials/nav')%>
+
+        <div class="header my-5">
+
+        </div>
+        <div class="content">
+
+            <div class="row">
+
+                <%-include('carousel.ejs')%>
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <h1>Request For help</h1>
+                    <h3>Food and Shelter</h3>
+                    <a class="btn btn-primary" href="/request/shelter">Request</a>
+                </div>
+                <div class="col-7">
+                    <img src="../public/images/covid/food.png" class="img-fluid-1" alt="...">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-7">
+                    <img src="../public/images/covid/request.svg" class="img-fluid-2" alt="...">
+                </div>
+                <div class="col-5">
+                    <h1>Help Others</h1>
+                    <h3>By getting started as volunteer</h3>
+                    <a class="btn btn-primary" href="/signup">SignUp as Volunteer</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-5">
+                    <h1>Not feeling well</h1>
+                    <h3>Get Health Checkup and Virtual Report</h3>
+                    <a class="btn btn-primary" href="/health">Get Diagnose</a>
+                </div>
+                <div class="col-7">
+                    <img src="../public/images/covid/doctor.png" class="img-fluid-3" alt="...">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-7">
+                    <img src="../public/images/covid/facts.svg" class="img-fluid-3" alt="...">
+                </div>
+                <div class="col-5">
+                    <h1>Get your facts right</h1>
+                    <a class="btn btn-primary" href="/covid">Check the live stats</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <h1>Want to contribute</h1>
+                    <h3>Contibute money and food to help others</h3>
+                    <a class="btn btn-primary trigger" href="#" data-izimodal-open="#modal-custom"
+                        data-izimodal-transitionin="fadeInDown">Let's Donate</a>
+                    <!-- <a class="btn btn-primary" href="/health">Let's Donate</a> -->
+                </div>
+                <div class="col-6">
+                    <img src="../public/images/covid/donate.svg" class="img-fluid-3" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-custom" aria-hidden="true" aria-labelledby="modal-custom" role="dialog" class="iziModal"
+        data-izimodal-group="grupo1" style="z-index: -1;">
+        <div class="iziModal-wrap" style="height: 365px;">
+            <div class="iziModal-content" style="padding: 0px;">
+                <button data-izimodal-close="" class="icon-close"></button>
+                <header>
+                    <a href="" id="signin">Sign in</a>
+                    <a href="" class="active">New Account</a>
+                </header>
+                <div class="sections">
+                    <section class="hide">
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <footer>
+                            <button data-izimodal-close="">Cancel</button>
+                            <button class="submit">Log in</button>
+                        </footer>
+                    </section>
+                    <section>
+                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <label for="check"><input type="checkbox" name="checkbox" id="check" value="1"> I agree to the
+                            <u>Terms</u>.</label>
+                        <footer>
+                            <button data-izimodal-close="" data-izimodal-transitionout="bounceOutDown">Cancel</button>
+                            <button class="submit">Create Account</button>
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/modal/iziModal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var modal = $('#modal-custom').iziModal();
+        $("#modal").iziModal({
+            title: '',
+            subtitle: '',
+            headerColor: '#88A0B9',
+            background: null,
+            theme: '',  // light
+            icon: null,
+            iconText: null,
+            iconColor: '',
+            rtl: false,
+            width: 600,
+            top: null,
+            bottom: null,
+            borderBottom: true,
+            padding: 0,
+            radius: 3,
+            zindex: 999,
+            iframe: false,
+            iframeHeight: 400,
+            iframeURL: null,
+            focusInput: true,
+            group: '',
+            loop: false,
+            arrowKeys: true,
+            navigateCaption: true,
+            navigateArrows: true, // Boolean, 'closeToModal', 'closeScreenEdge'
+            history: false,
+            restoreDefaultContent: false,
+            autoOpen: 0, // Boolean, Number
+            bodyOverflow: false,
+            fullscreen: false,
+            openFullscreen: false,
+            closeOnEscape: true,
+            closeButton: true,
+            appendTo: 'body', // or false
+            appendToOverlay: 'body', // or false
+            overlay: true,
+            overlayClose: true,
+            overlayColor: 'rgba(0, 0, 0, 0.4)',
+            timeout: false,
+            timeoutProgressbar: false,
+            pauseOnHover: false,
+            timeoutProgressbarColor: 'rgba(255,255,255,0.5)',
+            transitionIn: 'comingIn',
+            transitionOut: 'comingOut',
+            transitionInOverlay: 'fadeIn',
+            transitionOutOverlay: 'fadeOut',
+            onFullscreen: function () { },
+            onResize: function () { },
+            onOpening: function () { },
+            onOpened: function () { },
+            onClosing: function () { },
+            onClosed: function () { },
+            afterRender: function () { }
+        });
+
+        $("#modal-custom").iziModal('open', {
+            group: 'grupo1',
+            history: false,
+            overlayClose: false,
+            width: 600,
+            zindex: 999,
+            overlayColor: 'rgba(0, 0, 0, 0.6)',
+            transitionIn: 'bounceInDown',
+            transitionOut: 'bounceOutDown',
+            navigateCaption: true,
+            navigateArrows: "false",
+            onOpened: function () {
+                //console.log('onOpened');
+            },
+            onClosed: function () {
+                //console.log('onClosed');  
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

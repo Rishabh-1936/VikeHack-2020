@@ -1,0 +1,118 @@
+<div class="container my-4 signup-form">
+    <form method="POST" action="/request">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" value="" placeholder=" First Name"
+                    readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" name="lname" value="" placeholder="Last Name"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="" name="address"
+                readonly>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" value="" name="city" readonly>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" placeholder="State" value="" name="state" readonly>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="Zip Code" value="" name="zip" readonly>
+            </div>
+        </div>
+        <div class="form-row" style="align-items: center;">
+            <div class="form-group col-md-3">
+                <!-- <button type="button" class="btn btn-success" id="location">Get Location</button> -->
+                <small>*It helps volunteer to locate you on map</small>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude" placeholder="Latitude" value="" name="latitude"
+                    readonly>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude" placeholder="Longitude" value="" name="longitude"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="delivery_list">Please mention only essential items in list</label>
+            <small></small>
+            <textarea class="form-control" id="delivery_list" name="delivery_list" value="" rows="10" placeholder="
+    Mention the essential things like:
+    Grocery:
+    1.Vegetables
+    2.Fruits
+    Dairy:
+    1.Milk
+    Medicine:
+    1.Asprin
+                "></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pay_method">How would you like to pay?</label>
+            <select class="form-control" id="pay_method" name="pay_method">
+                <option value="pay_1">Call ahead to store and pay</option>
+                <option value="pay_2">Have the volunteer pay and reimburse when they deliver</option>
+                <option value="pay_3">N/A- I am requesting free delivery</option>
+            </select>
+        </div>
+        <div class="form-group my-4">
+            <label for="delivery_delay">How much time delay you may expect in the delivery(perferable 1-2
+                days)?</label>
+            <select class="form-control" id="delivery_delay" name="delivery_delay">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="additional_request">Do you have special requirements we should know about?</label><br>
+
+            <small style="color: #838181e6;">Let us know if you have any special accessibility needs, language
+                requirements, or notes for your
+                volunteer. Or, if you
+                are filling this out on behalf of someone else, let us know if you'd like us to contact you directly to
+                confirm the
+                order.</small>
+            <textarea class="form-control" id="additional_request" name="additional_request" value="" rows="2"
+                placeholder="Additional message"></textarea>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="request-contact-permission" required>
+            <label class="form-check-label" for="request-contact-permission">I authorize to share my contact information
+                with volunteers.*</label>
+        </div>
+
+        <div style="display: flex;">
+            <button type="submit" class="btn btn-primary" style="margin: auto;">Submit</button>
+        </div>
+
+    </form>
+</div>
