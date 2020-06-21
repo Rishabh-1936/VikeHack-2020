@@ -31,7 +31,7 @@ Volunteer cannot make request and add items.
 1. Open the windows terminal cmd or open the code with any code editor like vs-code with its terminal.
 
 2. Then go to the directory where the project is located i.e into the NeigbhourHood.
-(From the above point we mean that go into the folder Homly.space by using cd innovaTeen-Hack/Homly.space or cd Homly.space)
+(From the above point we mean that go into the folder Homly.space by using cd VikeHack-2020/Homly.space or cd Homly.space)
 
 3. Then type npm install (to install the dependencies) in terminal.
 4. Then type node index.js in terminal
