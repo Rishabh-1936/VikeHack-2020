@@ -1,4 +1,4 @@
-# innovaTeen-Hack
+# VikeHack-2020
 
 <h1>Homly.space</h1>
 <h3>As the application is in progress so please first login by using credentials for proper results.</h3>
